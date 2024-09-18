@@ -1,0 +1,221 @@
+:root {
+    --principal: #067fb7;
+    --secundaria: #0d47a1;
+    --azul-escuro: #0d47a1;
+    --cinza-escuro: #222;
+    --branco: #ebf5f5;
+    --verde: #4caf50;
+    --vermelho: #f44336;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.25rem;
+}
+.input {
+    display: flex;
+    width: 300px;
+    height: 25px;
+    justify-content: space-between;
+    align-items: center;
+    
+  }
+  .input input {
+    width: 300px;
+    height: 25px;
+    border-radius: 25px;
+    
+    border:none;
+    outline: 0;
+    font: bold 1.5rem arial;
+    text-align: center;
+    font-size: 28px;
+  }
+  .input label {
+    font: bold 1rem arial;
+  }
+  input::placeholder {
+    color: #615858;
+    font-style: italic;
+    font-size: 18px;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background: url(tecno02.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: contain;
+    color: #ac8ae0;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+main {
+    width: 100%;
+    height: 100vh;
+}
+
+section {
+    width: 100vw;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    text-align: center;
+    font-size: 1.05rem;
+    margin: 0.5rem 0 0 0;
+}
+
+/* classe para centralizar textos, paragrafos */
+.centro {
+    text-align: center;
+    
+}
+article.centro#instrucoes {
+    color: #3399FF; /* Azul escuro */
+    font-size: 18px; /* Tamanho da fonte */
+    font-weight: bold; /* Texto em negrito */
+  }
+/* div class questao com numero da questao e pergunta */
+.questao {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    background: rgba(255, 255, 3255, 0.1);
+   
+}
+
+#numQuestao {
+    text-align: center;
+    width: 2rem;
+    height: 2rem;
+    display: block;
+    background: var(--principal);
+    color: #fff;
+    padding: 6px 10px 4px 8px;
+    border-radius: 50%;
+}
+
+#pergunta {
+    margin-left: 1rem;
+}
+
+.imagemDaQuestao {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+/* article que acomoda a questao completa */
+.questoes {
+    user-select: none;
+    background: #f6f3f3;
+    background-color: rgba(59, 8, 131, 0.3);
+    padding: 1.5rem 1.5rem 1rem 1.5rem;
+    border: 1px solid #0e034f;
+    border-radius: 28px;
+    margin-bottom: 0.625rem;
+}
+
+.questoes ol li {
+    border: 1px solid var(--principal);
+    display: block;
+    margin-bottom: 0.625rem;
+    padding: 1rem;
+    border-radius: 28px;
+}
+
+.questoes ol li:hover {
+    background: var(--principal);
+    cursor: pointer;
+}
+
+.bloqueado {
+    display: none;
+}
+
+.bloqueado li:hover {
+    display: none;
+}
+
+#instrucoes {
+    font-size: 1rem;
+    color: #191919;
+    padding: 0.625rem;
+    border-radius: 8px;
+
+    display: flex;
+    justify-content: center;
+}
+
+#aviso {
+    color: var(--principal);
+}
+
+#autoria {
+    margin-top: 0.625rem;
+    font-size: 0.75rem;
+}
+
+/* ANIMACAO */
+
+/* Animar o input */
+@keyframes piscar {
+    0% {
+        filter: drop-shadow(0 0 15px var(--principal));
+        -webkit-filter: drop-shadow(0 0 15px var(--principal));
+        -moz-filter: drop-shadow(0 0 15px var(--principal));
+        -o-filter: drop-shadow(0 0 15px var(--principal));
+        -ms-filter: drop-shadow(0 0 15px var(--principal));
+    }
+    100% {
+    }
+}
+
+.animar {
+    animation: piscar .75s infinite alternate;
+}
+
+.aparecer {
+    animation: aparecer .5s infinite alternate;
+}
+
+@keyframes aparecer {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.acertou {
+    background: var(--verde);
+    animation: aparecer 0.1s infinite alternate;
+}
+
+.errou {
+    background: var(--vermelho);
+    animation: aparecer 0.1s infinite alternate;
+}
+
+.placar {
+    padding: 1rem;
+    border-radius: 6px;
+    background:#03a9f4;
+    font-size: 2rem;
+}
